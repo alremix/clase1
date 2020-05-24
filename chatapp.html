@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/stylechatapp.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="js/scriptchatapp.js"></script>
+</head>
+<body>
+    <!--shorcut div.header>div.appname+div.search+div.submenu-->
+    <div class="header">
+        <div class="appname">Chatapp</div>
+        <div class="space"></div>
+        <div class="search"><img src="image/icons8-search-96.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
+        <div class="submenu"><img src="image/icons8-menu-vertical-24.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
+    </div>
+    
+    <div class="menu">
+        <div class="camara"><img src="image/icons8-camera-24.png" alt="Avatar" height="25px" width="25px" srcset=""></div>
+            <button class="tablinks" data-view="chats">CHATS</button>
+            <button class="tablinks" data-view="estados">ESTADOS</button>
+            <button class="tablinks" data-view="llamadas">LLAMADAS</button>
+        </div>
+
+    <div id="chats" class="tabcontent">    
+        <div class="row">
+            <div class="icon">
+                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
+            </div>
+            <div class="content">
+                <div class="top-row">
+                    <div class="chatname">Aplicaciones Nativas</div>
+                    <div class="timedata">7:43 a.m.</div>
+                </div>
+                <div class="bottom-row">
+                    <div class="contactname">Alberto: Hola como estan?</div>
+                    <div class="status">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="estados" class="tabcontent"  style="display:none">
+        <div class="row2">
+            <div class="icon">
+                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
+            </div>
+            <div class="content">
+                <div class="top-row">
+                    <div class="chatname">Estados</div>
+                    <div class="timedata">7:43 a.m.</div>
+                </div>
+                <div class="bottom-row">
+                    <div class="contactname">Alberto: Ya hicieron la tarea?</div>
+                    <div class="status">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="llamadas" class="tabcontent"  style="display:none">
+        <div class="row3">
+            <div class="icon">
+                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
+            </div>
+            <div class="content">
+                <div class="top-row">
+                    <div class="chatname">Llamadas</div>
+                    <div class="timedata">7:43 a.m.</div>
+                </div>
+                <div class="bottom-row">
+                    <div class="contactname">Alberto: Ya hicieron la tarea?</div>
+                    <div class="status">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
