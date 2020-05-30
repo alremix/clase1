@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
     <link rel="stylesheet" href="css/stylechatapp.css">
+    <link rel="stylesheet" href="css/stylemessagebox.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -15,73 +16,113 @@
 </head>
 <body>
     <!--shorcut div.header>div.appname+div.search+div.submenu-->
-    <div class="header">
-        <div class="appname">Chatapp</div>
-        <div class="space"></div>
-        <div class="search"><img src="image/icons8-search-96.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
-        <div class="submenu"><img src="image/icons8-menu-vertical-24.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
-    </div>
-    
-    <div class="menu">
-        <div class="camara"><img src="image/icons8-camera-24.png" alt="Avatar" height="25px" width="25px" srcset=""></div>
-            <button class="tablinks" data-view="chats">CHATS</button>
-            <button class="tablinks" data-view="estados">ESTADOS</button>
-            <button class="tablinks" data-view="llamadas">LLAMADAS</button>
+    <div class="contactbox">
+        <div class="header">
+            <div class="appname">Chatapp</div>
+            <div class="space"></div>
+            <div class="search"><img src="image/icons8-search-96.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
+            <div class="submenu"><img src="image/icons8-menu-vertical-24.png" alt="Avatar" height="17px" width="17px" srcset=""></div>
+        </div>
+        
+        <div class="menu">
+            <div class="camara"><img src="image/icons8-camera-24.png" alt="Avatar" height="25px" width="25px" srcset=""></div>
+                <button class="tablinks" data-view="chats">CHATS</button>
+                <button class="tablinks" data-view="estados">ESTADOS</button>
+                <button class="tablinks" data-view="llamadas">LLAMADAS</button>
+            </div>
+
+        <div id="chats" class="tabcontent">    
+            <div class="friendlist">
+            </div>
         </div>
 
-    <div id="chats" class="tabcontent">    
-        <div class="row">
-            <div class="icon">
-                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
-            </div>
-            <div class="content">
-                <div class="top-row">
-                    <div class="chatname">Aplicaciones Nativas</div>
-                    <div class="timedata">7:43 a.m.</div>
+        <div id="estados" class="tabcontent"  style="display:none">
+            <div class="miestado">
+                <div class="row_estado">
+                    <div class="icon">
+                        <img src="image/user_plus.png" height="35px" width="35px" >
+                    </div>
+                    <div class="estado">
+                        <div class="top-row">
+                            <div class="chatname">Mi estado</div>
+                        </div>
+                        <div class="bottom-row">
+                            <div class="contactname">Añade una actualización</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bottom-row">
-                    <div class="contactname">Alberto: Hola como estan?</div>
-                    <div class="status">1</div>
+            </div>
+            <div class="recientes">
+                Recientes
+            </div>
+            <div class="tabestadosrecientes">
+                <div class="row">
+                    <div class="icon">
+                        <img src="image/estado.png" alt="Avatar" height="30px" width="30px">
+                    </div>
+                    <div class="content">
+                        <div class="top-row">
+                            <div class="statename">Lulu</div>
+                        </div>
+                        <div class="bottom-row">
+                            <div class="statetime">hace 3 minutos</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        
+        <div id="llamadas" class="tabcontent"  style="display:none">
+            <div class="llamadas">
+                <div class="row_llamadas">
+                    <div class="icon">
+                        <img src="image/estado.png" height="30px" width="30px">
+                    </div>
+                        <div class="content">
+                            <div class="top-row">
+                                <div class="chatname">Lulu</div>
+                            </div>
+                            <div class="bottom-row">
+                                <div class="contactname">23 de abril 3:28 p.m.</div>
+                                <div class="status_llamada">
+                                    <img src="image/icon_llamada.png" height="30px" width="30px">
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="estados" class="tabcontent"  style="display:none">
-        <div class="row2">
-            <div class="icon">
-                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
-            </div>
-            <div class="content">
-                <div class="top-row">
-                    <div class="chatname">Estados</div>
-                    <div class="timedata">7:43 a.m.</div>
-                </div>
-                <div class="bottom-row">
-                    <div class="contactname">Alberto: Ya hicieron la tarea?</div>
-                    <div class="status">1</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="llamadas" class="tabcontent"  style="display:none">
-        <div class="row3">
-            <div class="icon">
-                <img src="image/icons8-male-user-80.png" alt="Avatar" height="35px" width="35px" srcset="">
-            </div>
-            <div class="content">
-                <div class="top-row">
-                    <div class="chatname">Llamadas</div>
-                    <div class="timedata">7:43 a.m.</div>
-                </div>
-                <div class="bottom-row">
-                    <div class="contactname">Alberto: Ya hicieron la tarea?</div>
-                    <div class="status">1</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    <div class="messagebox" style="display: none;">
+		<div class="chat">
+			<div class="chat-header">
+				<div class="profile">
+					<div class="left">
+                        <a href="chatapp.html">
+						<img src="image/arrow.png" class="arrow"></a>
+						<img src="image/pp.png" class="pp" width="30px" height="50px">
+						<h2 class="contacto"></h2>
+						<span>online</span>
+					</div>
+					<div class="right">
+						<img src="image/video.png" class="icon">
+						<img src="image/phone.png" class="icon">
+						<img src="image/more.png" class="icon">
+					</div>
+				</div>
+			</div>
+			<div class="chat-box">
+			</div>
+			<div class="chat-footer">
+				<img src="image/emo.png" class="emo">
+				<textarea id="mandar" placeholder="Type a message"></textarea>
+				<div class="icons">
+					<img src="image/send.png" class="send">
+					<img src="image/camera.png">
+				</div>
+				<img src="image/mic.png" class="mic">
+			</div>
+		</div>
+	</div>    
 </body>
 </html>
